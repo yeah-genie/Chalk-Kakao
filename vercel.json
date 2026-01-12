@@ -1,0 +1,13 @@
+{
+    "buildCommand": "next build",
+    "outputDirectory": ".next",
+    "ignoreCommand": "exit 0",
+    "framework": "nextjs",
+    "excludeFiles": [
+        "chalk-app/**",
+        "chalk-canvas/**",
+        "chalk-ml/**",
+        "110.*/**",
+        "30.*/**"
+    ]
+}
