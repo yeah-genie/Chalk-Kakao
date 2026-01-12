@@ -1,0 +1,36 @@
+"use strict";(()=>{var e={};e.id=652,e.ids=[652],e.modules={399:e=>{e.exports=require("next/dist/compiled/next-server/app-page.runtime.prod.js")},517:e=>{e.exports=require("next/dist/compiled/next-server/app-route.runtime.prod.js")},6268:(e,t,a)=>{a.r(t),a.d(t,{originalPathname:()=>g,patchFetch:()=>f,requestAsyncStorage:()=>u,routeModule:()=>p,serverHooks:()=>h,staticGenerationAsyncStorage:()=>m});var o={};a.r(o),a.d(o,{POST:()=>d});var r=a(3278),n=a(5002),i=a(4877),s=a(1309);let l=new(a(1540)).$D(process.env.GEMINI_API_KEY||"");async function d(e){try{let t=await e.json(),a=function(e){let{strokes:t,start_latency_seconds:a,total_time_seconds:o}=e;return t&&0!==t.length?function(e){let{start_latency:t,avg_stroke_speed:a,pause_ratio:o,erase_count:r,total_strokes:n,total_time:i}=e;return t>60&&n<5||o>.7&&n<3?{diagnosis:"CONCEPT_GAP",confidence:.85,details:`High hesitation detected (${t}s wait, ${Math.round(100*o)}% paused). This may indicate unfamiliarity with the concept.`,recommendations:["Review foundational concepts for this topic","Try easier practice problems first"],metrics:e}:t<15&&o<.4&&r<=2&&n>=3?{diagnosis:"CONFIDENT",confidence:.82,details:`Excellent! You started in ${t}s and worked steadily with ${n} strokes. Shows strong understanding!`,recommendations:["Double-check your arithmetic","Make sure you answered all parts"],metrics:e}:r>3?{diagnosis:"HESITATION",confidence:.78,details:`You made ${r} corrections, showing careful revision of your approach.`,recommendations:["Spend 30 seconds planning before writing","Practice similar problems to build confidence"],metrics:e}:a>500&&i<30?{diagnosis:"TIME_PRESSURE",confidence:.72,details:`Fast pace detected (${a} px/s). Take your time for accuracy!`,recommendations:["Slow down and read carefully","Allocate time per problem"],metrics:e}:{diagnosis:"STEADY_PROGRESS",confidence:.7,details:`Good work! Completed in ${i}s with ${n} strokes. Check your answer against the rubric.`,recommendations:["Review your solution for errors","Compare with the Mark Scheme tab"],metrics:e}}(function(e,t,a){let o=e.filter(e=>"pen"===e.tool),r=e.filter(e=>"eraser"===e.tool),n=0,i=[];for(let e of o){let t=e.points;if(t.length<2)continue;let a=0,o=t[t.length-1].t-t[0].t;for(let e=1;e<t.length;e++){let o=t[e].x-t[e-1].x,r=t[e].y-t[e-1].y;a+=Math.sqrt(o*o+r*r)}o>0&&i.push(a/o),n+=o}let s=i.length>0?i.reduce((e,t)=>e+t,0)/i.length:0,l=0;if(o.length>1)for(let e=1;e<o.length;e++){let t=o[e-1].points[o[e-1].points.length-1]?.t||0;l+=Math.max(0,(o[e].points[0]?.t||0)-t)}let d=a||n+l;return{start_latency:Math.round(10*(t||0))/10,avg_stroke_speed:Math.round(s),pause_ratio:Math.round(100*(d>0?l/d:0))/100,erase_count:r.length,total_time:Math.round(d),total_strokes:o.length}}(t,a,o)):{diagnosis:"NO_DATA",confidence:0,details:"No strokes detected. Please write your solution on the canvas.",recommendations:["Try solving the problem before submitting."],metrics:{start_latency:0,avg_stroke_speed:0,pause_ratio:0,erase_count:0,total_time:0,total_strokes:0}}}(t),o=t.strokes?.length||0;if(o<5&&(a.diagnosis="INCOMPLETE",a.confidence=.9,a.details=`Not enough work shown (${o} strokes). Please write out your solution completely before submitting.`,a.recommendations=["Write out your complete solution, including all steps","Show your work for partial credit opportunities","Label each part clearly (a), (b), etc."]),t.canvas_image&&t.problem&&process.env.GEMINI_API_KEY)try{let e=await c(t.canvas_image,t.problem);a.grading=e;let o=e.totalPossible>0?e.totalEarned/e.totalPossible:0;e.totalEarned===e.totalPossible?(a.diagnosis="PERFECT",a.confidence=.95,a.details=`Excellent! You earned all ${e.totalPossible} points.`):o>=.7?(a.diagnosis="CONFIDENT",a.confidence=.8,a.details=`Good work! You earned ${e.totalEarned}/${e.totalPossible} points. ${e.aiAnalysis}`):o>=.4?(a.diagnosis="STEADY_PROGRESS",a.confidence=.75,a.details=`Partial credit earned: ${e.totalEarned}/${e.totalPossible} points. ${e.aiAnalysis}`):o>0?(a.diagnosis="CONCEPT_GAP",a.confidence=.7,a.details=`You earned ${e.totalEarned}/${e.totalPossible} points. Review the mark scheme for improvement areas.`):(a.diagnosis="INCOMPLETE",a.confidence=.85,a.details=`No points earned. ${e.aiAnalysis}`)}catch(e){console.error("Vision analysis error:",e)}return s.NextResponse.json(a)}catch(e){return console.error("Analysis error:",e),s.NextResponse.json({error:"Analysis failed"},{status:500})}}async function c(e,t){let a=l.getGenerativeModel({model:"gemini-1.5-flash"}),o=t.parts.map((e,t)=>{let a=String.fromCharCode(97+t),o=e.markScheme?.map(e=>`+${e.points}: ${e.criterion}`).join("\n")||"";return`Part (${a}) [${e.points} pts]:
+${o}`}).join("\n\n"),r=`You are a STRICT AP Calculus grader. Analyze this student's handwritten work carefully.
+
+PROBLEM: ${t.title}
+Topic: ${t.topic}
+
+SCORING RUBRIC:
+${o}
+
+STRICT GRADING RULES:
+1. First, recognize and transcribe the handwritten mathematical work EXACTLY as written
+2. If the canvas is mostly empty or has minimal writing, state "No substantial work shown"
+3. If handwriting is unclear, explicitly state what you CANNOT read
+4. ONLY award points for work that is CLEARLY demonstrated and MATCHES the rubric
+5. If a part has no attempt or just a few random marks, award 0 points
+6. Distinguish between:
+   - No attempt = 0 points
+   - Wrong approach = partial credit possible
+   - Correct setup but wrong answer = partial credit
+   - Complete correct solution = full points
+7. Do NOT be generous - grade like a real AP exam grader
+
+Respond in this exact JSON format:
+{
+  "recognizedText": "exact transcription of the handwritten work, or 'Canvas appears empty/minimal' if insufficient",
+  "parts": [
+    {
+      "partLabel": "a",
+      "recognizedWork": "what the student wrote for this part, or 'No work shown'",
+      "earnedPoints": number,
+      "maxPoints": number,
+      "feedback": "specific feedback - explain why points were earned or lost"
+    }
+  ],
+  "aiAnalysis": "critical analysis of the student's work quality and completeness"
+}`,n=e.replace(/^data:image\/\w+;base64,/,""),i=(await a.generateContent([r,{inlineData:{mimeType:"image/png",data:n}}])).response.text().match(/\{[\s\S]*\}/);if(!i)throw Error("Failed to parse AI response");let s=JSON.parse(i[0]),d=t.parts.reduce((e,t)=>e+t.points,0);return{totalEarned:s.parts.reduce((e,t)=>e+t.earnedPoints,0),totalPossible:d,parts:s.parts,recognizedText:s.recognizedText,aiAnalysis:s.aiAnalysis}}let p=new r.AppRouteRouteModule({definition:{kind:n.x.APP_ROUTE,page:"/api/analyze/route",pathname:"/api/analyze",filename:"route",bundlePath:"app/api/analyze/route"},resolvedPagePath:"C:\\Users\\yejin\\Downloads\\cryo\\chalk-canvas\\app\\api\\analyze\\route.ts",nextConfigOutput:"",userland:o}),{requestAsyncStorage:u,staticGenerationAsyncStorage:m,serverHooks:h}=p,g="/api/analyze/route";function f(){return(0,i.patchFetch)({serverHooks:h,staticGenerationAsyncStorage:m})}}};var t=require("../../../webpack-runtime.js");t.C(e);var a=e=>t(t.s=e),o=t.X(0,[787,833,540],()=>a(6268));module.exports=o})();

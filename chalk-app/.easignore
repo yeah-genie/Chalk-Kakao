@@ -1,0 +1,47 @@
+# EAS Build ignore file
+# Exclude large and unnecessary files from the build
+
+# Maestro binary (200MB+)
+maestro/
+maestro.zip
+
+# Test output files
+test_output*.txt
+maestro_test_results*.txt
+*.txt
+
+# Coverage reports
+coverage/
+
+# Node modules (EAS installs fresh)
+node_modules/
+
+# Local environment files
+.env.local
+.env.development.local
+
+# IDE files
+.idea/
+.vscode/
+
+# Git files
+.git/
+
+# Large media files
+*.mp4
+*.mov
+*.avi
+
+# APK files (185MB+)
+*.apk
+
+# Screenshots from testing
+*.png
+
+# Android build cache
+android/.gradle/
+android/build/
+android/app/build/
+
+# Expo cache
+.expo/

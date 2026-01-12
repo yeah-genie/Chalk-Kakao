@@ -1,0 +1,62 @@
+{
+  "expo": {
+    "name": "Chalk",
+    "slug": "chalk-app",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "chalk",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#09090B"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.chalk.tutor",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSMicrophoneUsageDescription": "Allow Chalk to access your microphone to record and analyze your lessons."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#09090B"
+      },
+      "package": "com.chalk.tutor",
+      "permissions": [
+        "RECORD_AUDIO"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Allow Chalk to access your microphone to record and analyze your lessons."
+        }
+      ],
+      "expo-video"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5098bad7-41db-4a22-9d36-813fb9b99541"
+      }
+    },
+    "owner": "yejinie-genie",
+    "runtimeVersion": "2.0.0",
+    "updates": {
+      "url": "https://u.expo.dev/5098bad7-41db-4a22-9d36-813fb9b99541"
+    }
+  }
+}

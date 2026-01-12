@@ -1,0 +1,65 @@
+appId: com.chalk.app
+---
+# Exam Flow Test
+# Tests the ESIP exam viewer and tracking functionality
+
+- launchApp
+
+# Navigate to exam (assuming there's a way to access it)
+- tapOn:
+    text: ".*Practice.*"
+    optional: true
+
+# Wait for exam screen to load
+- waitForAnimationToEnd
+
+# Take initial screenshot
+- takeScreenshot: exam_01_initial
+
+# Verify exam screen elements
+- assertVisible:
+    text: "Question"
+    
+- assertVisible:
+    text: "Pen"
+
+# Test tool selection
+- tapOn: "Pen"
+- takeScreenshot: exam_02_pen_selected
+
+# Test highlighter tool
+- tapOn: "Highlight"
+- takeScreenshot: exam_03_highlight_selected
+
+# Test navigation to next question
+- tapOn: "Next"
+- waitForAnimationToEnd
+- takeScreenshot: exam_04_question_2
+
+# Test navigation back to previous question
+- tapOn: "Previous"
+- waitForAnimationToEnd
+- takeScreenshot: exam_05_back_to_q1
+
+# Test flagging a question
+- tapOn:
+    text: "⚐"
+- takeScreenshot: exam_06_flagged
+
+# Select an answer option (if visible)
+- tapOn:
+    text: "A)"
+    optional: true
+
+# Navigate through a few more questions
+- tapOn: "Next"
+- tapOn: "Next"
+- waitForAnimationToEnd
+- takeScreenshot: exam_07_question_3
+
+# Verify timer is visible
+- assertVisible:
+    text: ".*:.*"
+
+# Take final screenshot
+- takeScreenshot: exam_08_final_state

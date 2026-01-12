@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "cb24a6c1-e878-4293-a46a-b731717f53be"
+      }
+    },
+    "android": {
+      "package": "com.yejiniegenie.seedlab"
+    }
+  }
+}

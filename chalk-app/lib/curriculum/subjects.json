@@ -1,0 +1,516 @@
+{
+    "subjects": [
+        {
+            "id": "ap-calculus-ab",
+            "name": "AP Calculus AB",
+            "category": "Mathematics",
+            "source": "College Board",
+            "units": [
+                {
+                    "id": "unit-1",
+                    "name": "Limits and Continuity",
+                    "weight": 10,
+                    "topics": [
+                        {
+                            "id": "1.1",
+                            "name": "Introducing Calculus: Can Change Occur at an Instant?"
+                        },
+                        {
+                            "id": "1.2",
+                            "name": "Defining Limits and Using Limit Notation"
+                        },
+                        {
+                            "id": "1.3",
+                            "name": "Estimating Limit Values from Graphs"
+                        },
+                        {
+                            "id": "1.4",
+                            "name": "Estimating Limit Values from Tables"
+                        },
+                        {
+                            "id": "1.5",
+                            "name": "Determining Limits Using Algebraic Properties"
+                        },
+                        {
+                            "id": "1.6",
+                            "name": "Determining Limits Using Algebraic Manipulation"
+                        },
+                        {
+                            "id": "1.7",
+                            "name": "Selecting Procedures for Determining Limits"
+                        },
+                        {
+                            "id": "1.8",
+                            "name": "Determining Limits Using the Squeeze Theorem"
+                        },
+                        {
+                            "id": "1.9",
+                            "name": "Connecting Multiple Representations of Limits"
+                        },
+                        {
+                            "id": "1.10",
+                            "name": "Exploring Types of Discontinuities"
+                        },
+                        {
+                            "id": "1.11",
+                            "name": "Defining Continuity at a Point"
+                        },
+                        {
+                            "id": "1.12",
+                            "name": "Confirming Continuity over an Interval"
+                        },
+                        {
+                            "id": "1.13",
+                            "name": "Removing Discontinuities"
+                        },
+                        {
+                            "id": "1.14",
+                            "name": "Connecting Infinite Limits and Vertical Asymptotes"
+                        },
+                        {
+                            "id": "1.15",
+                            "name": "Connecting Limits at Infinity and Horizontal Asymptotes"
+                        },
+                        {
+                            "id": "1.16",
+                            "name": "Working with the Intermediate Value Theorem"
+                        }
+                    ]
+                },
+                {
+                    "id": "unit-2",
+                    "name": "Differentiation: Definition and Fundamental Properties",
+                    "weight": 12,
+                    "topics": [
+                        {
+                            "id": "2.1",
+                            "name": "Defining Average and Instantaneous Rates of Change"
+                        },
+                        {
+                            "id": "2.2",
+                            "name": "Defining the Derivative of a Function"
+                        },
+                        {
+                            "id": "2.3",
+                            "name": "Estimating Derivatives of a Function at a Point"
+                        },
+                        {
+                            "id": "2.4",
+                            "name": "Connecting Differentiability and Continuity"
+                        },
+                        {
+                            "id": "2.5",
+                            "name": "Applying the Power Rule"
+                        },
+                        {
+                            "id": "2.6",
+                            "name": "Derivative Rules: Constant, Sum, Difference, and Constant Multiple"
+                        },
+                        {
+                            "id": "2.7",
+                            "name": "Derivatives of cos x, sin x, ex, and ln x"
+                        },
+                        {
+                            "id": "2.8",
+                            "name": "The Product Rule"
+                        },
+                        {
+                            "id": "2.9",
+                            "name": "The Quotient Rule"
+                        },
+                        {
+                            "id": "2.10",
+                            "name": "Finding the Derivatives of Tangent, Cotangent, Secant, and Cosecant"
+                        }
+                    ]
+                },
+                {
+                    "id": "unit-3",
+                    "name": "Differentiation: Composite, Implicit, and Inverse Functions",
+                    "weight": 9,
+                    "topics": [
+                        {
+                            "id": "3.1",
+                            "name": "The Chain Rule"
+                        },
+                        {
+                            "id": "3.2",
+                            "name": "Implicit Differentiation"
+                        },
+                        {
+                            "id": "3.3",
+                            "name": "Differentiating Inverse Functions"
+                        },
+                        {
+                            "id": "3.4",
+                            "name": "Differentiating Inverse Trigonometric Functions"
+                        },
+                        {
+                            "id": "3.5",
+                            "name": "Selecting Procedures for Calculating Derivatives"
+                        },
+                        {
+                            "id": "3.6",
+                            "name": "Calculating Higher-Order Derivatives"
+                        }
+                    ]
+                },
+                {
+                    "id": "unit-4",
+                    "name": "Contextual Applications of Differentiation",
+                    "weight": 10,
+                    "topics": [
+                        {
+                            "id": "4.1",
+                            "name": "Interpreting the Meaning of the Derivative in Context"
+                        },
+                        {
+                            "id": "4.2",
+                            "name": "Straight-Line Motion: Connecting Position, Velocity, and Acceleration"
+                        },
+                        {
+                            "id": "4.3",
+                            "name": "Rates of Change in Applied Contexts"
+                        },
+                        {
+                            "id": "4.4",
+                            "name": "Introduction to Related Rates"
+                        },
+                        {
+                            "id": "4.5",
+                            "name": "Solving Related Rates Problems"
+                        },
+                        {
+                            "id": "4.6",
+                            "name": "Approximating Values of a Function Using Local Linearity"
+                        },
+                        {
+                            "id": "4.7",
+                            "name": "Using L'Hospital's Rule for Determining Limits"
+                        }
+                    ]
+                },
+                {
+                    "id": "unit-5",
+                    "name": "Analytical Applications of Differentiation",
+                    "weight": 15,
+                    "topics": [
+                        {
+                            "id": "5.1",
+                            "name": "Using the Mean Value Theorem"
+                        },
+                        {
+                            "id": "5.2",
+                            "name": "Extreme Value Theorem, Global vs. Local Extrema"
+                        },
+                        {
+                            "id": "5.3",
+                            "name": "Determining Intervals on Which a Function is Increasing or Decreasing"
+                        },
+                        {
+                            "id": "5.4",
+                            "name": "Using the First Derivative Test"
+                        },
+                        {
+                            "id": "5.5",
+                            "name": "Using the Candidates Test to Find Absolute Extrema"
+                        },
+                        {
+                            "id": "5.6",
+                            "name": "Determining Concavity of Functions"
+                        },
+                        {
+                            "id": "5.7",
+                            "name": "Using the Second Derivative Test"
+                        },
+                        {
+                            "id": "5.8",
+                            "name": "Sketching Graphs of Functions and Their Derivatives"
+                        },
+                        {
+                            "id": "5.9",
+                            "name": "Connecting a Function, Its First Derivative, and Its Second Derivative"
+                        },
+                        {
+                            "id": "5.10",
+                            "name": "Introduction to Optimization Problems"
+                        },
+                        {
+                            "id": "5.11",
+                            "name": "Solving Optimization Problems"
+                        },
+                        {
+                            "id": "5.12",
+                            "name": "Exploring Behaviors of Implicit Relations"
+                        }
+                    ]
+                },
+                {
+                    "id": "unit-6",
+                    "name": "Integration and Accumulation of Change",
+                    "weight": 18,
+                    "topics": [
+                        {
+                            "id": "6.1",
+                            "name": "Exploring Accumulations of Change"
+                        },
+                        {
+                            "id": "6.2",
+                            "name": "Approximating Areas with Riemann Sums"
+                        },
+                        {
+                            "id": "6.3",
+                            "name": "Riemann Sums, Summation Notation, and Definite Integral Notation"
+                        },
+                        {
+                            "id": "6.4",
+                            "name": "The Fundamental Theorem of Calculus and Accumulation Functions"
+                        },
+                        {
+                            "id": "6.5",
+                            "name": "Interpreting the Behavior of Accumulation Functions"
+                        },
+                        {
+                            "id": "6.6",
+                            "name": "Applying Properties of Definite Integrals"
+                        },
+                        {
+                            "id": "6.7",
+                            "name": "The Fundamental Theorem of Calculus and Definite Integrals"
+                        },
+                        {
+                            "id": "6.8",
+                            "name": "Finding Antiderivatives and Indefinite Integrals"
+                        },
+                        {
+                            "id": "6.9",
+                            "name": "Integrating Using Substitution"
+                        },
+                        {
+                            "id": "6.10",
+                            "name": "Integrating Functions Using Long Division and Completing the Square"
+                        },
+                        {
+                            "id": "6.11",
+                            "name": "Selecting Techniques for Antidifferentiation"
+                        }
+                    ]
+                },
+                {
+                    "id": "unit-7",
+                    "name": "Differential Equations",
+                    "weight": 9,
+                    "topics": [
+                        {
+                            "id": "7.1",
+                            "name": "Modeling Situations with Differential Equations"
+                        },
+                        {
+                            "id": "7.2",
+                            "name": "Verifying Solutions for Differential Equations"
+                        },
+                        {
+                            "id": "7.3",
+                            "name": "Sketching Slope Fields"
+                        },
+                        {
+                            "id": "7.4",
+                            "name": "Reasoning Using Slope Fields"
+                        },
+                        {
+                            "id": "7.5",
+                            "name": "Approximating Solutions Using Euler's Method"
+                        },
+                        {
+                            "id": "7.6",
+                            "name": "Finding General Solutions Using Separation of Variables"
+                        },
+                        {
+                            "id": "7.7",
+                            "name": "Finding Particular Solutions"
+                        },
+                        {
+                            "id": "7.8",
+                            "name": "Exponential Models with Differential Equations"
+                        },
+                        {
+                            "id": "7.9",
+                            "name": "Logistic Models with Differential Equations"
+                        }
+                    ]
+                },
+                {
+                    "id": "unit-8",
+                    "name": "Applications of Integration",
+                    "weight": 17,
+                    "topics": [
+                        {
+                            "id": "8.1",
+                            "name": "Finding the Average Value of a Function on an Interval"
+                        },
+                        {
+                            "id": "8.2",
+                            "name": "Connecting Position, Velocity, and Acceleration Using Integrals"
+                        },
+                        {
+                            "id": "8.3",
+                            "name": "Using Accumulation Functions and Definite Integrals in Applied Contexts"
+                        },
+                        {
+                            "id": "8.4",
+                            "name": "Finding the Area Between Curves Expressed as Functions of x"
+                        },
+                        {
+                            "id": "8.5",
+                            "name": "Finding the Area Between Curves Expressed as Functions of y"
+                        },
+                        {
+                            "id": "8.6",
+                            "name": "Finding the Area Between Curves That Intersect at More Than Two Points"
+                        },
+                        {
+                            "id": "8.7",
+                            "name": "Volumes with Cross Sections: Squares and Rectangles"
+                        },
+                        {
+                            "id": "8.8",
+                            "name": "Volumes with Cross Sections: Triangles and Semicircles"
+                        },
+                        {
+                            "id": "8.9",
+                            "name": "Volume with Disc Method: Revolving Around the x- or y-Axis"
+                        },
+                        {
+                            "id": "8.10",
+                            "name": "Volume with Disc Method: Revolving Around Other Axes"
+                        },
+                        {
+                            "id": "8.11",
+                            "name": "Volume with Washer Method: Revolving Around the x- or y-Axis"
+                        },
+                        {
+                            "id": "8.12",
+                            "name": "Volume with Washer Method: Revolving Around Other Axes"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "sat-math",
+            "name": "SAT Math",
+            "category": "Mathematics",
+            "source": "College Board",
+            "units": [
+                {
+                    "id": "algebra",
+                    "name": "Algebra",
+                    "weight": 35,
+                    "topics": [
+                        {
+                            "id": "alg-1",
+                            "name": "Linear equations in one variable"
+                        },
+                        {
+                            "id": "alg-2",
+                            "name": "Linear equations in two variables"
+                        },
+                        {
+                            "id": "alg-3",
+                            "name": "Linear functions"
+                        },
+                        {
+                            "id": "alg-4",
+                            "name": "Systems of two linear equations in two variables"
+                        },
+                        {
+                            "id": "alg-5",
+                            "name": "Linear inequalities in one or two variables"
+                        }
+                    ]
+                },
+                {
+                    "id": "advanced-math",
+                    "name": "Advanced Math",
+                    "weight": 35,
+                    "topics": [
+                        {
+                            "id": "adv-1",
+                            "name": "Equivalent expressions"
+                        },
+                        {
+                            "id": "adv-2",
+                            "name": "Nonlinear equations in one variable"
+                        },
+                        {
+                            "id": "adv-3",
+                            "name": "Systems of equations in two variables"
+                        },
+                        {
+                            "id": "adv-4",
+                            "name": "Nonlinear functions"
+                        }
+                    ]
+                },
+                {
+                    "id": "problem-solving",
+                    "name": "Problem-Solving and Data Analysis",
+                    "weight": 15,
+                    "topics": [
+                        {
+                            "id": "ps-1",
+                            "name": "Ratios, rates, proportional relationships"
+                        },
+                        {
+                            "id": "ps-2",
+                            "name": "Percentages"
+                        },
+                        {
+                            "id": "ps-3",
+                            "name": "One-variable data: distributions and measures"
+                        },
+                        {
+                            "id": "ps-4",
+                            "name": "Two-variable data: models and scatterplots"
+                        },
+                        {
+                            "id": "ps-5",
+                            "name": "Probability and conditional probability"
+                        },
+                        {
+                            "id": "ps-6",
+                            "name": "Inference from sample statistics"
+                        },
+                        {
+                            "id": "ps-7",
+                            "name": "Evaluating statistical claims"
+                        }
+                    ]
+                },
+                {
+                    "id": "geometry-trig",
+                    "name": "Geometry and Trigonometry",
+                    "weight": 15,
+                    "topics": [
+                        {
+                            "id": "geo-1",
+                            "name": "Area and volume"
+                        },
+                        {
+                            "id": "geo-2",
+                            "name": "Lines, angles, and triangles"
+                        },
+                        {
+                            "id": "geo-3",
+                            "name": "Right triangles and trigonometry"
+                        },
+                        {
+                            "id": "geo-4",
+                            "name": "Circles"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,78 @@
+appId: com.chalk.app
+---
+# ESIP Dashboard E2E Test
+# Tests the main dashboard UI and navigation
+
+- launchApp
+
+# Wait for app to fully load
+- waitForAnimationToEnd
+- takeScreenshot: esip_01_dashboard_loaded
+
+# Verify main elements are visible
+- assertVisible:
+    text: "Chalk"
+
+- assertVisible:
+    text: "EXAM STRATEGY PROFILER"
+    
+- assertVisible:
+    text: "START PRACTICE EXAM"
+
+# Take screenshot of main dashboard
+- takeScreenshot: esip_02_main_ui
+
+# Test Quick Action buttons
+- assertVisible:
+    text: "STRATEGY"
+    
+- assertVisible:
+    text: "REPORTS"
+    
+- assertVisible:
+    text: "STUDENTS"
+
+# Test navigation to Strategy Report
+- tapOn:
+    text: "STRATEGY"
+- waitForAnimationToEnd
+- takeScreenshot: esip_03_strategy_page
+
+# Go back
+- tapOn:
+    text: "Back"
+    optional: true
+- waitForAnimationToEnd
+
+# Test navigation to Parent Report
+- tapOn:
+    text: "REPORTS"
+    optional: true
+- waitForAnimationToEnd
+- takeScreenshot: esip_04_reports_page
+
+# Go back
+- tapOn:
+    text: "Back"
+    optional: true
+- waitForAnimationToEnd
+
+# Test Practice Exam button
+- tapOn:
+    text: "START PRACTICE EXAM"
+- waitForAnimationToEnd
+- takeScreenshot: esip_05_exam_viewer
+
+# Verify exam screen elements
+- assertVisible:
+    text: "Question"
+    optional: true
+
+# Go back to main
+- tapOn:
+    text: "Back"
+    optional: true
+- waitForAnimationToEnd
+
+# Final screenshot
+- takeScreenshot: esip_06_final_state

@@ -1,0 +1,224 @@
+{
+  "common": {
+    "loading": "로딩 중...",
+    "save": "저장",
+    "cancel": "취소",
+    "delete": "삭제",
+    "edit": "수정",
+    "add": "추가",
+    "back": "뒤로",
+    "next": "다음",
+    "confirm": "확인",
+    "viewAll": "전체 보기 →",
+    "noData": "데이터가 없습니다"
+  },
+  "nav": {
+    "dashboard": "대시보드",
+    "students": "학생 관리",
+    "analytics": "학생 분석",
+    "profile": "공개 프로필",
+    "logout": "로그아웃"
+  },
+  "dashboard": {
+    "title": "대시보드",
+    "greeting": "{name} 선생님",
+    "totalLogs": "누적 기록",
+    "sameDayRate": "당일 기록률",
+    "instantFeedbackBadge": "즉시 피드백 뱃지 획득",
+    "myStudents": "내 학생",
+    "recentLogs": "최근 기록",
+    "recordLesson": "오늘 수업 기록하기",
+    "startRecording": "기록 시작하기",
+    "noLogs": {
+      "title": "첫 수업을 기록해보세요",
+      "description": "기록을 쌓으면 자동으로 포트폴리오가 만들어집니다"
+    },
+    "quickActions": {
+      "students": "학생 관리",
+      "analytics": "학생 분석",
+      "publicProfile": "공개 프로필"
+    },
+    "studentCard": {
+      "understanding": "이해도",
+      "points": "점",
+      "noAnalytics": "분석 데이터 없음"
+    }
+  },
+  "students": {
+    "title": "학생 관리",
+    "addStudent": "학생 추가",
+    "editStudent": "학생 수정",
+    "noStudents": {
+      "title": "아직 등록된 학생이 없습니다",
+      "action": "첫 학생 추가하기"
+    },
+    "form": {
+      "name": "이름",
+      "namePlaceholder": "김지민",
+      "subject": "과목",
+      "subjectPlaceholder": "수학",
+      "grade": "학년",
+      "gradePlaceholder": "고1",
+      "goal": "목표",
+      "goalPlaceholder": "수능 1등급",
+      "parentContact": "학부모 연락처 (알림 발송용)",
+      "parentContactPlaceholder": "010-1234-5678",
+      "notes": "메모",
+      "notesPlaceholder": "학생에 대한 메모..."
+    },
+    "status": {
+      "active": "활성",
+      "paused": "일시정지",
+      "completed": "완료"
+    },
+    "actions": {
+      "pause": "일시정지",
+      "activate": "활성화",
+      "confirmDelete": "정말 이 학생을 삭제하시겠습니까?"
+    }
+  },
+  "studentDetail": {
+    "backToList": "← 학생 목록",
+    "updateAnalytics": "분석 업데이트",
+    "notifyParent": "학부모 알림",
+    "totalLessons": "총 수업",
+    "totalHours": "총 시간",
+    "understanding": "이해도",
+    "growthRate": "성장률",
+    "understandingTrend": "이해도 추이",
+    "strengths": "강점",
+    "areasToImprove": "개선 필요",
+    "recommendedFocus": "추천 학습 방향",
+    "learningStyle": "학습 스타일",
+    "recentLogs": "최근 수업 기록",
+    "noLogs": "아직 수업 기록이 없습니다",
+    "recordLesson": "수업 기록하기",
+    "notFound": "학생을 찾을 수 없습니다",
+    "styles": {
+      "visual": "시각형",
+      "auditory": "청각형",
+      "kinesthetic": "체험형",
+      "reading": "읽기형"
+    },
+    "progress": {
+      "improving": "성장 중",
+      "stable": "안정적",
+      "needsAttention": "관심 필요"
+    },
+    "notify": {
+      "title": "학부모 알림 보내기",
+      "sending": "전송 중...",
+      "send": "알림 보내기",
+      "success": "알림이 전송되었습니다.",
+      "error": "알림 전송에 실패했습니다.",
+      "templates": {
+        "goodProgress": "이번 주 수업에서 좋은 성과를 보였습니다.",
+        "needsReview": "복습이 조금 더 필요할 것 같습니다.",
+        "checkHomework": "다음 수업 전까지 과제 확인 부탁드립니다."
+      }
+    }
+  },
+  "log": {
+    "title": "수업 기록",
+    "subtitle": "녹음만 하면 AI가 자동으로 기록해요",
+    "selectStudent": "학생 선택 (선택사항)",
+    "startRecording": "수업 녹음 시작",
+    "tapToRecord": "탭 한 번으로 자동 기록",
+    "or": "또는",
+    "manualEntry": "직접 기록하기 (수동)",
+    "recording": {
+      "title": "{student} 수업 녹음 중",
+      "titleNoStudent": "수업 녹음 중",
+      "aiNote": "녹음이 끝나면 AI가 자동으로 수업을 분석합니다"
+    },
+    "processing": {
+      "title": "AI 분석 중...",
+      "subtitle": "수업 내용을 자동으로 분석하고 있어요"
+    },
+    "success": {
+      "title": "기록 완료!",
+      "subtitle": "대시보드로 이동합니다"
+    },
+    "manual": {
+      "title": "직접 기록",
+      "subtitle": "탭 3번 + 한 줄이면 끝",
+      "back": "뒤로",
+      "date": "날짜",
+      "saveLog": "기록 저장",
+      "saving": "저장 중...",
+      "selectOneTag": "최소 하나의 태그를 선택해주세요."
+    },
+    "problem": {
+      "label": "Problem",
+      "question": "어떤 부분이 어려웠나요?",
+      "detail": "상세 내용 (선택)"
+    },
+    "diagnosis": {
+      "label": "Diagnosis",
+      "question": "왜 어려워했나요?",
+      "detail": "상세 내용 (선택)"
+    },
+    "solution": {
+      "label": "Solution",
+      "question": "어떻게 해결했나요?",
+      "detail": "상세 내용 (선택)"
+    },
+    "tags": {
+      "problem": {
+        "calculation": "계산실수",
+        "concept": "개념이해",
+        "interpretation": "문제해석",
+        "time": "시간부족",
+        "formula": "공식암기",
+        "application": "응용력"
+      },
+      "diagnosis": {
+        "basics": "기초부족",
+        "careless": "부주의",
+        "practice": "연습부족",
+        "confusion": "개념혼동",
+        "confidence": "자신감부족",
+        "focus": "집중력"
+      },
+      "solution": {
+        "repeat": "반복연습",
+        "organize": "개념정리",
+        "similar": "유사문제",
+        "visualize": "시각화",
+        "errorNote": "오답노트",
+        "encourage": "격려"
+      }
+    },
+    "error": {
+      "saveFailed": "녹음 저장에 실패했습니다."
+    }
+  },
+  "analytics": {
+    "title": "학생 분석",
+    "summary": {
+      "totalStudents": "전체 학생",
+      "activeStudents": "활성 학생",
+      "lessonsThisMonth": "이번 달 수업",
+      "avgUnderstanding": "평균 이해도"
+    },
+    "selectStudent": "학생을 선택하면 상세 분석을 볼 수 있습니다",
+    "noStudents": "아직 등록된 학생이 없습니다",
+    "addStudent": "학생 추가"
+  },
+  "auth": {
+    "login": "로그인",
+    "logout": "로그아웃",
+    "loginRequired": "로그인이 필요합니다."
+  },
+  "onboarding": {
+    "title": "프로필 완성하기",
+    "name": "이름",
+    "namePlaceholder": "선생님 성함",
+    "school": "학교/학원",
+    "schoolPlaceholder": "근무하시는 곳",
+    "subject": "주 과목",
+    "subjectPlaceholder": "수학, 영어 등",
+    "complete": "시작하기",
+    "completing": "설정 중..."
+  }
+}

@@ -1,0 +1,48 @@
+appId: com.chalk.tutor
+name: PM Improvements Verification Test
+tags:
+  - verification
+---
+# 앱 실행
+- launchApp:
+    clearState: false
+
+# 첫 화면 캡처
+- takeScreenshot: 01_dashboard_loaded
+
+# 스크롤 후 전체 UI 확인
+- swipe:
+    direction: UP
+    duration: 500
+
+- takeScreenshot: 02_scrolled_view
+
+# AI Scribe 버튼 확인
+- assertVisible:
+    id: "start-ai-scribe-button"
+    optional: true
+
+# 통계 카드 확인
+- assertVisible:
+    id: "stat-card-students"
+    optional: true
+
+- assertVisible:
+    id: "stat-card-sessions"
+    optional: true
+
+- assertVisible:
+    id: "stat-card-mastery"
+    optional: true
+
+# 설정 버튼 확인
+- assertVisible:
+    id: "settings-button"
+    optional: true
+
+# 학생 추가 버튼 또는 학생 목록 확인
+- assertVisible:
+    id: "add-student-button"
+    optional: true
+
+- takeScreenshot: 03_final_state

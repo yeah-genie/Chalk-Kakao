@@ -1,0 +1,21 @@
+appId: com.chalk.tutor
+name: Onboarding Flow
+---
+- launchApp:
+    clearState: true
+
+# 온보딩 화면 확인
+- assertVisible: 
+    text: "Let's get started"
+    optional: false
+
+# 이름 입력
+- tapOn:
+    id: "tutor-name-input"
+- inputText: "E2E Tester"
+
+# 다음 버튼
+- tapOn: "Next"
+
+# 대시보드 도착 확인
+- assertVisible: "Welcome Back"

@@ -1,0 +1,76 @@
+appId: com.chalk.tutor
+name: Full User Flow E2E Test
+tags:
+  - e2e
+  - critical
+---
+# 전체 사용자 플로우 E2E 테스트
+# 테스트 순서: 대시보드 → AI Scribe → 녹음 → 분석 → 저장
+
+# 1. 앱 실행 (Metro 서버 연결 상태 가정)
+- launchApp:
+    clearState: false
+
+# 2. 대시보드 로딩 대기
+- extendedWaitUntil:
+    visible: "Welcome"
+    timeout: 15000
+
+- takeScreenshot: flow_01_dashboard
+
+# 3. 스크롤하여 전체 대시보드 확인
+- swipe:
+    direction: UP
+    duration: 500
+
+- takeScreenshot: flow_02_scrolled
+
+# 4. 위로 다시 스크롤
+- swipe:
+    direction: DOWN
+    duration: 500
+
+# 5. AI Scribe 버튼 탭
+- tapOn:
+    text: "AI SCRIBE"
+    optional: true
+
+- tapOn:
+    id: "start-ai-scribe-button"
+    optional: true
+
+- takeScreenshot: flow_03_ai_scribe
+
+# 6. 녹음 화면 로딩 대기
+- extendedWaitUntil:
+    visible: "AI Scribe"
+    timeout: 10000
+
+# 7. 녹음 시작
+- tapOn:
+    id: "start-recording-button"
+    optional: true
+
+- takeScreenshot: flow_04_recording
+
+# 8. 녹음 중 확인
+- extendedWaitUntil:
+    visible: "RECORDING"
+    timeout: 5000
+    optional: true
+
+# 9. 뒤로 가기 (녹음 취소)
+- pressKey: Back
+
+- takeScreenshot: flow_05_back_to_dashboard
+
+# 10. 설정 화면 확인
+- tapOn:
+    text: "Settings"
+    optional: true
+
+- tapOn:
+    id: "settings-button"
+    optional: true
+
+- takeScreenshot: flow_06_settings

@@ -1,0 +1,29 @@
+appId: com.chalk.tutor
+name: Full UI Test for PM Analysis
+tags:
+  - analysis
+---
+# 앱 실행 및 전체 화면 탐색
+- launchApp:
+    clearState: false
+
+# 첫 화면 스크린샷
+- takeScreenshot: 01_app_launched
+
+# 5초 대기 후 현재 상태 확인
+- swipe:
+    direction: UP
+    duration: 500
+    
+- takeScreenshot: 02_after_scroll
+
+# 화면에 있는 모든 텍스트 요소 탐색
+- tapOn:
+    text: ".*"
+    optional: true
+    
+- takeScreenshot: 03_after_tap
+
+# 뒤로 가기
+- pressKey: Back
+- takeScreenshot: 04_back_pressed

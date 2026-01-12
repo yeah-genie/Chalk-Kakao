@@ -1,0 +1,15 @@
+appId: com.chalk.tutor
+name: Development Client Launch Test
+tags:
+  - smoke
+---
+# Development Client 앱 실행 테스트
+# 참고: Dev Client는 Metro 서버에 연결되어야 앱 콘텐츠가 로드됩니다.
+# 이 테스트는 APK 설치 및 앱 실행 가능 여부만 확인합니다.
+
+- launchApp:
+    clearState: false
+    
+# 앱이 실행되면 성공
+# Dev Client 런처 화면 또는 앱 화면이 표시됨
+- takeScreenshot: dev_client_launched

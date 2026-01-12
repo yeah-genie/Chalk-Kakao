@@ -1,0 +1,85 @@
+appId: com.chalk.tutor
+name: AI Scribe Recording Flow
+tags:
+  - recording
+  - e2e
+  - critical
+---
+# AI Scribe 녹음 플로우 E2E 테스트
+# expo-av 기반 녹음 기능 테스트
+# 앱이 이미 대시보드에 있다고 가정
+
+# 1. 대시보드 확인 (이미 앱이 실행 중이어야 함)
+- assertVisible:
+    text: "Welcome"
+    optional: true
+
+- takeScreenshot: scribe_01_dashboard
+
+# 3. AI Scribe 버튼 탭 (대시보드에서)
+- tapOn:
+    text: "AI SCRIBE"
+    optional: true
+
+# 또는 녹음 화면으로 직접 이동
+- tapOn:
+    id: "start-ai-scribe-button"
+    optional: true
+
+# 4. 녹음 화면 로딩 대기 (마이크 설정 중 화면)
+- extendedWaitUntil:
+    visible: "AI Scribe"
+    timeout: 10000
+
+- takeScreenshot: scribe_02_recording_ready
+
+# 5. 녹음 시작 버튼 탭
+- tapOn:
+    id: "start-recording-button"
+
+- takeScreenshot: scribe_03_recording_started
+
+# 6. 녹음 중 표시 확인
+- extendedWaitUntil:
+    visible: "RECORDING"
+    timeout: 5000
+
+# 7. 5초 대기 (실제 녹음 시뮬레이션)
+- swipe:
+    direction: UP
+    duration: 100
+- swipe:
+    direction: DOWN
+    duration: 100
+
+# 8. 녹음 중지 버튼 탭
+- tapOn:
+    id: "stop-recording-button"
+
+- takeScreenshot: scribe_04_analyzing
+
+# 9. AI 분석 완료 대기 (최대 30초)
+- extendedWaitUntil:
+    visible: "Lesson Analyzed"
+    timeout: 30000
+
+- takeScreenshot: scribe_05_analysis_complete
+
+# 10. 분석 결과 확인
+- assertVisible: "AI INSIGHT"
+
+# 11. 개념 뱃지 확인 (테스트 데이터 기반)
+- assertVisible:
+    text: "key concepts"
+    optional: true
+
+# 12. 포트폴리오에 저장
+- tapOn:
+    id: "save-portfolio-button"
+
+# 13. 성공 알림 또는 대시보드 복귀 확인
+- extendedWaitUntil:
+    visible: "Welcome"
+    timeout: 15000
+
+- takeScreenshot: scribe_06_saved_to_portfolio

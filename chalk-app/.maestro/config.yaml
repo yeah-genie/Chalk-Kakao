@@ -1,0 +1,6 @@
+# Maestro 전역 설정 (Development Client 방식)
+appId: com.chalk.tutor
+name: Chalk E2E Tests
+
+# Development Client 모드: 앱을 새로 설치하지 않고 실행만 함
+# Metro 서버가 실행 중이어야 함 (npx expo start)

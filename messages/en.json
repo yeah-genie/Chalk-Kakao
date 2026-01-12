@@ -1,0 +1,224 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "back": "Back",
+    "next": "Next",
+    "confirm": "Confirm",
+    "viewAll": "View all →",
+    "noData": "No data available"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "students": "Students",
+    "analytics": "Analytics",
+    "profile": "Public Profile",
+    "logout": "Logout"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "greeting": "{name} Teacher",
+    "totalLogs": "Total Logs",
+    "sameDayRate": "Same-day Rate",
+    "instantFeedbackBadge": "Instant Feedback Badge Earned",
+    "myStudents": "My Students",
+    "recentLogs": "Recent Logs",
+    "recordLesson": "Record Today's Lesson",
+    "startRecording": "Start Recording",
+    "noLogs": {
+      "title": "Record your first lesson",
+      "description": "Your portfolio builds automatically as you record"
+    },
+    "quickActions": {
+      "students": "Students",
+      "analytics": "Analytics",
+      "publicProfile": "Public Profile"
+    },
+    "studentCard": {
+      "understanding": "Understanding",
+      "points": "pts",
+      "noAnalytics": "No analytics data"
+    }
+  },
+  "students": {
+    "title": "Student Management",
+    "addStudent": "Add Student",
+    "editStudent": "Edit Student",
+    "noStudents": {
+      "title": "No students registered yet",
+      "action": "Add your first student"
+    },
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "John Doe",
+      "subject": "Subject",
+      "subjectPlaceholder": "Math",
+      "grade": "Grade",
+      "gradePlaceholder": "10th",
+      "goal": "Goal",
+      "goalPlaceholder": "Top grades",
+      "parentContact": "Parent Contact (for notifications)",
+      "parentContactPlaceholder": "010-1234-5678",
+      "notes": "Notes",
+      "notesPlaceholder": "Notes about the student..."
+    },
+    "status": {
+      "active": "Active",
+      "paused": "Paused",
+      "completed": "Completed"
+    },
+    "actions": {
+      "pause": "Pause",
+      "activate": "Activate",
+      "confirmDelete": "Are you sure you want to delete this student?"
+    }
+  },
+  "studentDetail": {
+    "backToList": "← Student List",
+    "updateAnalytics": "Update Analytics",
+    "notifyParent": "Notify Parent",
+    "totalLessons": "Total Lessons",
+    "totalHours": "Total Hours",
+    "understanding": "Understanding",
+    "growthRate": "Growth Rate",
+    "understandingTrend": "Understanding Trend",
+    "strengths": "Strengths",
+    "areasToImprove": "Areas to Improve",
+    "recommendedFocus": "Recommended Focus",
+    "learningStyle": "Learning Style",
+    "recentLogs": "Recent Lesson Logs",
+    "noLogs": "No lesson logs yet",
+    "recordLesson": "Record Lesson",
+    "notFound": "Student not found",
+    "styles": {
+      "visual": "Visual",
+      "auditory": "Auditory",
+      "kinesthetic": "Kinesthetic",
+      "reading": "Reading"
+    },
+    "progress": {
+      "improving": "Improving",
+      "stable": "Stable",
+      "needsAttention": "Needs Attention"
+    },
+    "notify": {
+      "title": "Send Parent Notification",
+      "sending": "Sending...",
+      "send": "Send Notification",
+      "success": "Notification sent successfully.",
+      "error": "Failed to send notification.",
+      "templates": {
+        "goodProgress": "Great progress in this week's lessons.",
+        "needsReview": "A bit more review might be helpful.",
+        "checkHomework": "Please check the homework before next lesson."
+      }
+    }
+  },
+  "log": {
+    "title": "Lesson Log",
+    "subtitle": "Just record, AI logs automatically",
+    "selectStudent": "Select student (optional)",
+    "startRecording": "Start Recording",
+    "tapToRecord": "One tap to auto-log",
+    "or": "or",
+    "manualEntry": "Enter manually",
+    "recording": {
+      "title": "Recording lesson for {student}",
+      "titleNoStudent": "Recording lesson",
+      "aiNote": "AI will automatically analyze when recording ends"
+    },
+    "processing": {
+      "title": "AI Analyzing...",
+      "subtitle": "Automatically analyzing lesson content"
+    },
+    "success": {
+      "title": "Log Complete!",
+      "subtitle": "Redirecting to dashboard"
+    },
+    "manual": {
+      "title": "Manual Entry",
+      "subtitle": "3 taps + one line, done",
+      "back": "Back",
+      "date": "Date",
+      "saveLog": "Save Log",
+      "saving": "Saving...",
+      "selectOneTag": "Please select at least one tag."
+    },
+    "problem": {
+      "label": "Problem",
+      "question": "What was difficult?",
+      "detail": "Details (optional)"
+    },
+    "diagnosis": {
+      "label": "Diagnosis",
+      "question": "Why was it difficult?",
+      "detail": "Details (optional)"
+    },
+    "solution": {
+      "label": "Solution",
+      "question": "How was it resolved?",
+      "detail": "Details (optional)"
+    },
+    "tags": {
+      "problem": {
+        "calculation": "Calculation Error",
+        "concept": "Concept Understanding",
+        "interpretation": "Problem Interpretation",
+        "time": "Time Shortage",
+        "formula": "Formula Memory",
+        "application": "Application"
+      },
+      "diagnosis": {
+        "basics": "Weak Basics",
+        "careless": "Carelessness",
+        "practice": "Lack of Practice",
+        "confusion": "Concept Confusion",
+        "confidence": "Low Confidence",
+        "focus": "Focus Issues"
+      },
+      "solution": {
+        "repeat": "Repeated Practice",
+        "organize": "Concept Organization",
+        "similar": "Similar Problems",
+        "visualize": "Visualization",
+        "errorNote": "Error Notes",
+        "encourage": "Encouragement"
+      }
+    },
+    "error": {
+      "saveFailed": "Failed to save recording."
+    }
+  },
+  "analytics": {
+    "title": "Student Analytics",
+    "summary": {
+      "totalStudents": "Total Students",
+      "activeStudents": "Active Students",
+      "lessonsThisMonth": "Lessons This Month",
+      "avgUnderstanding": "Avg Understanding"
+    },
+    "selectStudent": "Select a student to view detailed analytics",
+    "noStudents": "No students registered yet",
+    "addStudent": "Add Student"
+  },
+  "auth": {
+    "login": "Login",
+    "logout": "Logout",
+    "loginRequired": "Login required."
+  },
+  "onboarding": {
+    "title": "Complete Your Profile",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "school": "School/Academy",
+    "schoolPlaceholder": "Where you teach",
+    "subject": "Main Subject",
+    "subjectPlaceholder": "Math, English, etc.",
+    "complete": "Complete Setup",
+    "completing": "Setting up..."
+  }
+}

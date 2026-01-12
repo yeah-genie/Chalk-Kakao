@@ -1,0 +1,48 @@
+# Full User Flow E2E Test (No Relaunch)
+# 이 테스트는 앱이 이미 열려있는 상태에서 시작합니다 (EAS Update 확인용)
+
+appId: com.chalk.tutor
+
+---
+
+# 1. 초기 상태 확인 (EAS Update 반영 확인)
+- extendedWaitUntil:
+    visible:
+        id: "add-student-button-top"
+    timeout: 60000
+
+- takeScreenshot: flow_01_dashboard_new
+
+# 2. 통계 카드 및 AI 텍스트 확인
+- assertVisible:
+    id: "stat-card-mastery"
+- assertVisible: "Based on AI analysis"
+
+# 3. 신규 학생 추가 버튼 (헤더) 탭
+- tapOn:
+    id: "add-student-button-top"
+
+- takeScreenshot: flow_02_add_student_screen
+- assertVisible: "Add Student"
+
+# 4. 뒤로가기 및 대시보드 복귀
+- back
+
+# 5. AI Scribe 버튼 탭
+- tapOn:
+    id: "start-ai-scribe-button"
+
+- takeScreenshot: flow_03_recording_screen
+- assertVisible: "Recording"
+
+# 6. 뒤로가기 및 대시보드 복귀
+- back
+
+# 7. 설정 버튼 탭
+- tapOn:
+    id: "settings-button"
+
+- takeScreenshot: flow_04_settings_screen
+- assertVisible: "Settings"
+
+- takeScreenshot: flow_06_final

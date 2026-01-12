@@ -1,0 +1,25 @@
+appId: com.chalk.tutor
+name: Add Student Flow
+---
+- launchApp
+
+# 학생 추가 버튼
+- tapOn: 
+    id: "add-student-button"
+
+# 모달 확인
+- assertVisible: "Add New Student"
+
+# 이름 입력
+- tapOn:
+    id: "student-name-input"
+- inputText: "Jane Doe"
+
+# 과목 선택
+- tapOn: "AP Calculus AB"
+
+# 저장
+- tapOn: "Save"
+
+# 학생 목록에 추가됨 확인
+- assertVisible: "Jane Doe"
