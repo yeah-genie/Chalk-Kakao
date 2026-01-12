@@ -1,0 +1,14 @@
+# React Native / Expo apps
+chalk-app
+chalk-canvas
+
+# ML models and datasets
+chalk-ml
+110.*
+30.*
+dmath-dataset
+amps.tar.gz
+
+# Other
+.venv
+node_modules
