@@ -131,3 +131,13 @@ export async function POST(request: NextRequest) {
         });
     }
 }
+
+// GET: API 상태 확인 (테스트용)
+export async function GET() {
+    return NextResponse.json({
+        status: "ok",
+        message: "Chalk Kakao Analyze API is running!",
+        usage: "Send POST request with Kakao skill format",
+        timestamp: new Date().toISOString()
+    });
+}
