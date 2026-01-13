@@ -21,13 +21,25 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!);
  */
 export async function analyzeExamImage(imageUrl: string): Promise<ExamAnalysisResult> {
     try {
+        console.log("=== 이미지 분석 시작 ===");
+        console.log("이미지 URL:", imageUrl);
+
         // 1. 이미지 다운로드
+        console.log("1. 이미지 다운로드 중...");
         const imageResponse = await fetch(imageUrl);
+
+        if (!imageResponse.ok) {
+            console.error("이미지 다운로드 실패:", imageResponse.status, imageResponse.statusText);
+            throw new Error(`이미지 다운로드 실패: ${imageResponse.status}`);
+        }
+
         const imageBuffer = await imageResponse.arrayBuffer();
         const base64Image = Buffer.from(imageBuffer).toString("base64");
+        console.log("이미지 크기:", imageBuffer.byteLength, "bytes");
 
         // 이미지 타입 확인 (대부분 jpeg)
         const mimeType = imageResponse.headers.get("content-type") || "image/jpeg";
+        console.log("이미지 타입:", mimeType);
 
         // 2. Gemini 모델 준비 (안정적인 모델 사용)
         const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
