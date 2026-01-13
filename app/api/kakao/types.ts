@@ -108,13 +108,16 @@ export interface KakaoQuickReply {
  */
 export interface ExamAnalysisResult {
     subject: "수학" | "국어" | "영어" | "과학" | "사회" | "기타";
-    score?: number;
-    totalScore?: number;
+    score?: number | null;
+    totalScore?: number | null;
     errors: {
         questionNumber: number | string;
+        studentAnswer?: string;    // 학생이 쓴 답
+        correctAnswer?: string;    // 정답
         errorType: string;
         description: string;
     }[];
     insights?: string;
     potentialScore?: number;  // 실수 없었으면 받았을 점수
 }
+
