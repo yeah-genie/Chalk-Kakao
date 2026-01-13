@@ -29,19 +29,35 @@ export async function POST(request: NextRequest) {
         // detailParams에서 secureimage 플러그인으로 받은 이미지 URL 찾기
         let imageUrl: string | null = null;
 
-        // 헬퍼 함수: 배열이면 첫 번째 요소, 아니면 그대로 반환
+        // 헬퍼 함수: 다양한 형태의 URL 추출
         const extractUrl = (value: unknown): string | null => {
             if (!value) return null;
+
+            // 배열이면 첫 번째 요소
             if (Array.isArray(value)) {
-                return value[0] || null;
+                return extractUrl(value[0]);
             }
+
+            // 문자열인 경우
             if (typeof value === 'string') {
-                return value;
+                // "List(http://...)" 형태 처리
+                const listMatch = value.match(/List\((https?:\/\/[^)]+)\)/);
+                if (listMatch) {
+                    return listMatch[1];
+                }
+                // 일반 URL
+                if (value.startsWith('http://') || value.startsWith('https://')) {
+                    return value;
+                }
+                return null;
             }
+
+            // 객체인 경우 (origin, value, url 속성 탐색)
             if (typeof value === 'object' && value !== null) {
                 const obj = value as Record<string, unknown>;
                 return extractUrl(obj.origin) || extractUrl(obj.value) || extractUrl(obj.url);
             }
+
             return null;
         };
 
