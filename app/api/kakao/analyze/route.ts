@@ -29,21 +29,39 @@ export async function POST(request: NextRequest) {
         // detailParams에서 secureimage 플러그인으로 받은 이미지 URL 찾기
         let imageUrl: string | null = null;
 
+        // 헬퍼 함수: 배열이면 첫 번째 요소, 아니면 그대로 반환
+        const extractUrl = (value: unknown): string | null => {
+            if (!value) return null;
+            if (Array.isArray(value)) {
+                return value[0] || null;
+            }
+            if (typeof value === 'string') {
+                return value;
+            }
+            if (typeof value === 'object' && value !== null) {
+                const obj = value as Record<string, unknown>;
+                return extractUrl(obj.origin) || extractUrl(obj.value) || extractUrl(obj.url);
+            }
+            return null;
+        };
+
         // 방법 1: detailParams에서 찾기
         if (body.action.detailParams) {
             const imageParam = body.action.detailParams["이미지"] ||
                 body.action.detailParams["image"];
             if (imageParam) {
-                imageUrl = imageParam.origin || imageParam.value;
+                imageUrl = extractUrl(imageParam.origin) || extractUrl(imageParam.value);
             }
         }
 
         // 방법 2: params에서 직접 찾기
         if (!imageUrl && body.action.params) {
-            imageUrl = body.action.params["이미지"] ||
-                body.action.params["image"] ||
-                body.action.params["secureimage"];
+            imageUrl = extractUrl(body.action.params["이미지"]) ||
+                extractUrl(body.action.params["image"]) ||
+                extractUrl(body.action.params["secureimage"]);
         }
+
+        console.log("추출된 이미지 URL:", imageUrl);
 
         // 이미지가 없으면 안내 메시지
         if (!imageUrl) {
