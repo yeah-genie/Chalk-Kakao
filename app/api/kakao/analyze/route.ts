@@ -107,10 +107,17 @@ export async function POST(request: NextRequest) {
         // 3. Gemini Vision으로 이미지 분석
         const analysisResult = await analyzeExamImage(imageUrl);
 
-        console.log("분석 결과:", analysisResult);
+        console.log("분석 결과:", JSON.stringify(analysisResult, null, 2));
 
         // 4. 결과 메시지 생성
-        const messageText = formatAnalysisMessage(analysisResult);
+        let messageText = formatAnalysisMessage(analysisResult);
+
+        // 빈 메시지 방지
+        if (!messageText || messageText.trim().length === 0) {
+            messageText = "분석이 완료되었지만 결과를 표시할 수 없어요. 다시 시도해주세요!";
+        }
+
+        console.log("최종 메시지 (길이:", messageText.length, "):", messageText.substring(0, 200));
 
         // 5. 카카오 응답 형식으로 반환
         const response: KakaoSkillResponse = {
@@ -137,6 +144,8 @@ export async function POST(request: NextRequest) {
                 ]
             }
         };
+
+        console.log("응답 JSON:", JSON.stringify(response).substring(0, 300));
 
         return NextResponse.json(response);
 
