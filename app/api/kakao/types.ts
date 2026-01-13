@@ -112,12 +112,17 @@ export interface ExamAnalysisResult {
     totalScore?: number | null;
     errors: {
         questionNumber: number | string;
-        studentAnswer?: string;    // 학생이 쓴 답
-        correctAnswer?: string;    // 정답
+        studentAnswer?: string;
+        correctAnswer?: string;
         errorType: string;
         description: string;
+        relatedConcept?: string;  // 관련 개념
+        studyTip?: string;         // 공부 팁
     }[];
+    errorPattern?: string;         // 반복된 실수 패턴
     insights?: string;
-    potentialScore?: number;  // 실수 없었으면 받았을 점수
+    studyPlan?: string[];          // 공부 계획
+    potentialScore?: number;
+    encouragement?: string;        // 격려 메시지
 }
 
