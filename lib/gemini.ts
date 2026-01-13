@@ -193,72 +193,82 @@ export function formatAnalysisMessage(result: ExamAnalysisResult): string {
         message += `📝 점수: ${result.score}/${result.totalScore}점\n`;
     }
 
-    // 틀린 문제 상세
+    // 틀린 문제 상세 (최대 3개만 표시)
     if (result.errors.length > 0) {
         message += `❌ 틀린 문제: ${result.errors.length}개\n\n`;
 
-        message += `📋 상세 분석\n`;
-        message += `━━━━━━━━━━\n`;
+        const displayErrors = result.errors.slice(0, 3); // 최대 3개만
 
-        result.errors.forEach((err, index) => {
+        displayErrors.forEach((err, index) => {
             const num = err.questionNumber || `${index + 1}번`;
-            message += `\n🔸 ${num}\n`;
+            message += `🔸 ${num}`;
 
-            // 학생 답 vs 정답
+            if (err.errorType) {
+                message += ` (${err.errorType})`;
+            }
+            message += `\n`;
+
+            // 학생 답 vs 정답 (간략히)
             if (err.studentAnswer && err.correctAnswer) {
-                message += `   ✗ 내 답: ${err.studentAnswer}\n`;
-                message += `   ✓ 정답: ${err.correctAnswer}\n`;
+                message += `  ${err.studentAnswer} → ${err.correctAnswer}\n`;
             }
 
-            // 오류 유형
-            message += `   📌 ${err.errorType}\n`;
-
-            // 설명
+            // 설명 (짧게)
             if (err.description) {
-                message += `   💬 ${err.description}\n`;
+                const shortDesc = err.description.length > 50
+                    ? err.description.substring(0, 47) + "..."
+                    : err.description;
+                message += `  💬 ${shortDesc}\n`;
             }
 
-            // 관련 개념
-            if (err.relatedConcept) {
-                message += `   📚 개념: ${err.relatedConcept}\n`;
-            }
-
-            // 공부 팁
+            // 공부 팁 (가장 중요!)
             if (err.studyTip) {
-                message += `   💡 팁: ${err.studyTip}\n`;
+                const shortTip = err.studyTip.length > 40
+                    ? err.studyTip.substring(0, 37) + "..."
+                    : err.studyTip;
+                message += `  💡 ${shortTip}\n`;
             }
+
+            message += `\n`;
         });
+
+        // 더 있으면 알림
+        if (result.errors.length > 3) {
+            message += `... 외 ${result.errors.length - 3}개 더\n`;
+        }
     } else {
         message += `🎉 틀린 문제 없음! 완벽해요!\n`;
     }
 
-    // 실수 패턴
+    // 실수 패턴 (핵심!)
     if (result.errorPattern) {
-        message += `\n⚠️ ${result.errorPattern}\n`;
-    }
-
-    // 공부 계획
-    if (result.studyPlan && result.studyPlan.length > 0) {
-        message += `\n� 추천 공부법\n`;
-        result.studyPlan.forEach(step => {
-            message += `  ${step}\n`;
-        });
+        const shortPattern = result.errorPattern.length > 60
+            ? result.errorPattern.substring(0, 57) + "..."
+            : result.errorPattern;
+        message += `\n⚠️ ${shortPattern}\n`;
     }
 
     // 잠재 점수
     if (result.potentialScore !== undefined && result.score !== undefined && result.score !== null) {
         const diff = result.potentialScore - result.score;
         if (diff > 0) {
-            message += `\n🎯 실수만 없었으면 ${result.potentialScore}점! (+${diff}점)`;
+            message += `\n🎯 실수 없었으면 ${result.potentialScore}점! (+${diff}점)`;
         }
     }
 
-    // 격려 메시지
+    // 격려 메시지 (짧게)
     if (result.encouragement) {
-        message += `\n\n${result.encouragement}`;
-    } else if (result.insights) {
-        message += `\n\n💪 ${result.insights}`;
+        const shortEnc = result.encouragement.length > 50
+            ? result.encouragement.substring(0, 47) + "..."
+            : result.encouragement;
+        message += `\n\n${shortEnc}`;
+    }
+
+    // 최종 길이 체크 (카카오 최대 1000자)
+    if (message.length > 950) {
+        message = message.substring(0, 947) + "...";
     }
 
     return message;
 }
+
