@@ -29,8 +29,8 @@ export async function analyzeExamImage(imageUrl: string): Promise<ExamAnalysisRe
         // 이미지 타입 확인 (대부분 jpeg)
         const mimeType = imageResponse.headers.get("content-type") || "image/jpeg";
 
-        // 2. Gemini 모델 준비 (Gemini 3 Flash - 2025년 12월 출시, 빠르고 정확!)
-        const model = genAI.getGenerativeModel({ model: "gemini-3-flash" });
+        // 2. Gemini 모델 준비 (안정적인 모델 사용)
+        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-exp" });
 
         // 3. AI에게 분석 요청 (프롬프트)
         const prompt = `
